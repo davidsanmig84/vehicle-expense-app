@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vehicle Expense Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Vechicle  Expense Calculator</h1>
+
+    <div class="section">
+      <h2 class="section-title">Vehicle Profile</h2>
+
+      <label for="vehicleSelect">Select Vehicle</label>
+      <select id="vehicleSelect">
+        <option value="">Choose a vehicle</option>
+      </select>
+
+      <label for="vehicleName">New Vehicle Name</label>
+      <input type="text" id="vehicleName" placeholder="2016 Ram 2500" />
+
+      <button id="saveVehicleBtn" type="button">Save Vehicle Profile</button>
+
+      <label for="currentOdometer">Current Odometer</label>
+      <input type="number" id="currentOdometer" step="1" placeholder="100000" />
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Trip Info</h2>
+
+      <label for="miles">Miles Driven</label>
+      <input type="number" id="miles" placeholder="100" />
+
+      <label for="gallons">Gallons Used</label>
+      <input type="number" id="gallons" step="0.01" placeholder="5" />
+
+      <label for="price">Price Per Gallon</label>
+      <input type="number" id="price" step="0.01" placeholder="2.80" />
+    </div>
+
+    <div class="section">
+      <h2 class="section-title">Rates</h2>
+
+      <label for="wearTear">Wear & Tear ($ per mile)</label>
+      <input type="number" id="wearTear" step="0.01" placeholder="0.10" />
+
+      <label for="reimbursement">Mileage Compensation ($ per mile)</label>
+      <input type="number" id="reimbursement" step="0.001" placeholder="0.725" />
+    </div>
+
+    <button id="calculateBtn">Calculate</button>
+
+    <div id="results">
+      <h2 class="section-title">Results</h2>
+      <p>MPG: <span id="mpgResult">0</span></p>
+      <p>Total Fuel Cost: <span id="fuelCostResult">$0.00</span></p>
+      <p>Fuel Cost Per Mile: <span id="fuelCostPerMileResult">$0.00</span></p>
+      <p>Wear & Tear Total: <span id="wearTearTotalResult">$0.00</span></p>
+      <p>Total Operating Cost: <span id="totalOperatingCostResult">$0.00</span></p>
+      <p>Total Cost Per Mile: <span id="totalCostPerMileResult">$0.00</span></p>
+      <p>Total Reimbursement: <span id="reimbursementTotalResult">$0.00</span></p>
+      <p>Profit: <span id="profitResult">$0.00</span></p>
+      <p>Profit Per Mile: <span id="profitPerMileResult">$0.00</span></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
