@@ -43,4 +43,33 @@ calculateBtn.addEventListener("click", function () {
 
   const profitElement = document.getElementById("profitResult");
   profitElement.style.color = profit >= 0 ? "green" : "red";
+
+  
+});
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+  // clear saved data
+  localStorage.removeItem("vehicleData");
+
+  // clear inputs
+  document.getElementById("vehicleName").value = "";
+  document.getElementById("currentOdometer").value = "";
+  document.getElementById("miles").value = "";
+  document.getElementById("gallons").value = "";
+  document.getElementById("price").value = "";
+  document.getElementById("wearTear").value = "";
+  document.getElementById("reimbursement").value = "";
+
+  // clear results
+  document.getElementById("mpgResult").textContent = "0";
+  document.getElementById("fuelCostResult").textContent = "$0.00";
+  document.getElementById("fuelCostPerMileResult").textContent = "$0.00";
+  document.getElementById("wearTearTotalResult").textContent = "$0.00";
+  document.getElementById("totalOperatingCostResult").textContent = "$0.00";
+  document.getElementById("totalCostPerMileResult").textContent = "$0.00";
+  document.getElementById("reimbursementTotalResult").textContent = "$0.00";
+  document.getElementById("profitResult").textContent = "$0.00";
+  document.getElementById("profitPerMileResult").textContent = "$0.00";
+
+  alert("All data cleared!");
 });
