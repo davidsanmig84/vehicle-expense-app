@@ -1,5 +1,5 @@
-calculateBtn.addEventListener("click", function () {
-  const miles = parseFloat(document.getElementById("miles").value) || 0;
+function calculateExpenses() {
+    const miles = parseFloat(document.getElementById("miles").value) || 0;
   const gallons = parseFloat(document.getElementById("gallons").value) || 0;
   const price = parseFloat(document.getElementById("price").value) || 0;
   const wearTear = parseFloat(document.getElementById("wearTear").value) || 0;
@@ -43,9 +43,7 @@ calculateBtn.addEventListener("click", function () {
 
   const profitElement = document.getElementById("profitResult");
   profitElement.style.color = profit >= 0 ? "green" : "red";
-
-  
-});
+}
 
 document.getElementById("clearBtn").addEventListener("click", () => {
   // clear saved data
@@ -72,4 +70,10 @@ document.getElementById("clearBtn").addEventListener("click", () => {
   document.getElementById("profitPerMileResult").textContent = "$0.00";
 
   alert("All data cleared!");
+});
+
+document.getElementById("calculateBtn").addEventListener("click", calculateExpenses);
+
+["miles", "gallons", "price", "wearTear", "reimbursement"].forEach(id => {
+  document.getElementById(id).addEventListener("input", calculateExpenses);
 });
